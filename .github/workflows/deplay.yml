@@ -1,0 +1,49 @@
+name: deploy
+
+on:
+    push: # 当有 push 事件时运行下面的 jobs
+    workflow_dispatch: # 手动触发工作流
+    # schedule:
+    #     # 每天早上8:00运行
+    #     - cron: "0 0 * * *"
+
+# env:
+#     TZ: Asia/Shanghai # 设置当前环境时区
+
+jobs:
+    build: # 任务名自取
+        runs-on: ubuntu-latest # 在什么环境运行任务
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2 # 使用 actions/checkout 这个 action
+              with:
+                  submodules: true # 获取 submodule 主题
+                  fetch-depth: 0 # 获取所有历史记录
+
+            #  Other steps you want to add
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v2 # Hugo 官方提供的 action
+              with:
+                  hugo-version: "latest" # 获取最新版本的 Hugo
+                  extended: true # 获取 extended 版本，支持 SCSS 等高级功能
+
+            # 编译站点
+            - name: Build Web
+              run: hugo
+
+            # 创建 CNAME，这个是原始配置中没有的
+            - uses: "finnp/create-file-action@master"
+              env:
+                  FILE_NAME: "./public/CNAME"
+                  FILE_DATA: "ykzo.com.cn"
+
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3 # 自动发布 GitHub Pages 的 action
+              with:
+                  # 使用 personal access token 发布到外部仓库
+                  PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }} # GitHub Secrets 中配置的 personal access token
+                  EXTERNAL_REPOSITORY: 1262706090/1262706090.github.io # 发布到指定仓库
+                  PUBLISH_BRANCH: main # 发布到 main 分支
+                  PUBLISH_DIR: ./public # 发布 public 文件夹中的内容
+                  commit_message: ${{ github.event.head_commit.message }}
