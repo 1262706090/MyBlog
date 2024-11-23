@@ -30,7 +30,7 @@ jobs:
 
             # 编译站点
             - name: Build Web
-              run: hugo
+              run: hugo --minify
 
             # 创建 CNAME，这个是原始配置中没有的
             - uses: "finnp/create-file-action@master"
