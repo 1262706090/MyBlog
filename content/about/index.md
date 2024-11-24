@@ -1,10 +1,10 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: "Index"
 subtitle: ""
-date: {{ .Date }}
-lastmod: {{ .Date }}
-draft: true
-author: "ykzo"
+date: 2024-11-24T14:53:33+08:00
+lastmod: 2024-11-24T14:53:33+08:00
+draft: false
+author: ""
 authorLink: ""
 license: ""
 
@@ -20,12 +20,14 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 
 toc:
-  enable: true
-  auto: true
+    enable: true
+    auto: true
 
 mapbox:
 share:
-  enable: true
+    enable: true
 comment:
-  enable: true
+    enable: true
 ---
+
+暂无

@@ -4,7 +4,7 @@ baseURL = "https://ykzo.com.cn/"
 theme = "LoveIt"
 
 # 网站标题
-title = "Stilig"
+title = "Ykzo'Blog"
 defaultContentLanguage = "zh-cn"
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-CN"
@@ -35,7 +35,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # 作者配置
 # [author]
 [params.author]
-  name = "Stilig"
+  name = "Ykzo"
   email = "your_email"
 
 # 菜单配置
@@ -67,6 +67,14 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     name = "分类"
     url = "/categories/"
     title = ""
+  [[menu.main]]
+    # weight 参数可以看做菜单栏上各项的排序，越大的排在电脑网页的越右边
+    weight = 4
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    title = "About"
+
 
 # Hugo 解析文档的配置
 [markup]
@@ -109,9 +117,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # LoveIt 新增 | 0.2.0 日期格式
   dateFormat = "2006-01-02"
   # 网站标题, 用于 Open Graph 和 Twitter Cards
-  title = "Stilig的博客"
+  title = "Ykzo的博客"
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-  description = "Stilig的博客"
+  description = "Ykzo的博客"
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = ["首页中间的图片"]
 
@@ -124,9 +132,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # LoveIt 新增 | 0.2.0 页面头部导航栏标题配置
   [params.header.title]
     # LOGO 的 URL
-    logo = ""
+    # logo = "images/logo.png"
     # 标题名称
-    name = "Stilig"
+    name = "Ykzo'Blog"
     # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
     pre = ""
     # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
@@ -177,7 +185,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # 是否隐藏网站图标资源链接
   noFavicon = false
   # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
-  svgFavicon = ""
+  svgFavicon = "/svgFavicon.svg"
   # Android 浏览器主题色
   themeColor = "#ffffff"
   # Safari 图标颜色
@@ -204,9 +212,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   absoluteURL = false
   ##注册使用，前往：https://www.algolia.com/
   [params.search.algolia]
-    index = ""
-    appID = ""
-    searchKey = ""
+    index = "ykzo"
+    appID = "FKTW1AAMOA"
+    searchKey = "48bbf64c00ada38e233bf8f046654419"
 
 # 主页配置
 [params.home]
@@ -218,7 +226,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # Gravatar 邮箱，用于优先在主页显示的头像
     gravatarEmail = ""
     # 主页显示头像的 URL
-    avatarURL = ""
+    avatarURL = "images/20240812085355.jpg"
     # LoveIt 更改 | 0.2.7 主页显示的网站标题 (支持 HTML 格式)
     title = ""
     # 主页显示的网站副标题 (允许 HTML 格式)
