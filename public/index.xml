@@ -3,7 +3,15 @@
         <title>Stilig</title>
         <link>http://localhost:1313/</link>
         <description>Stilig的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 23 Nov 2024 22:41:02 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 24 Nov 2024 12:06:40 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>First_post</title>
+    <link>http://localhost:1313/first_post/</link>
+    <pubDate>Sun, 24 Nov 2024 12:06:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/first_post/</guid>
+    <description><![CDATA[<p>测试</p>]]></description>
+</item>
+</channel>
 </rss>
