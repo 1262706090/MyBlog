@@ -327,7 +327,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # 是否使用 lightgallery
   lightgallery = false
   # LoveIt 新增 | 0.2.0 是否使用 ruby 扩展语法
-  ruby = false
+  ruby = true
   # LoveIt 新增 | 0.2.0 是否使用 fraction 扩展语法
   fraction = true
   # LoveIt 新增 | 0.2.0 是否使用 fontawesome 扩展语法
