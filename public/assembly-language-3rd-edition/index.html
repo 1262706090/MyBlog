@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>汇编语言（第3版） - Ykzo&#39;Blog</title><meta name="Description" content="Ykzo的博客"><meta property="og:url" content="http://localhost:1313/assembly-language-3rd-edition/">
+  <meta property="og:site_name" content="Ykzo&#39;Blog">
+  <meta property="og:title" content="汇编语言（第3版）">
+  <meta property="og:description" content="汇编语言（第3版）王爽著 笔记">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-01T20:24:50+08:00">
+    <meta property="article:modified_time" content="2024-11-01T20:24:50+08:00">
+    <meta property="article:tag" content="Programming-Languages">
+    <meta property="article:tag" content="Assembly Language">
+    <meta property="article:tag" content="Wang Shuang">
+    <meta property="og:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+  <meta name="twitter:title" content="汇编语言（第3版）">
+  <meta name="twitter:description" content="汇编语言（第3版）王爽著 笔记">
+<meta name="application-name" content="Ykzo&#39;Blog">
+<meta name="apple-mobile-web-app-title" content="Ykzo&#39;Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/svgFavicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/assembly-language-3rd-edition/" /><link rel="next" href="http://localhost:1313/katex/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "汇编语言（第3版）",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/assembly-language-3rd-edition\/"
+        },"genre": "posts","keywords": "Programming-Languages, Assembly Language, Wang Shuang","wordcount":  1893 ,
+        "url": "http:\/\/localhost:1313\/assembly-language-3rd-edition\/","datePublished": "2024-10-01T20:24:50+08:00","dateModified": "2024-11-01T20:24:50+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ykzo"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="normal" data-header-mobile="normal"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Ykzo&#39;Blog">Ykzo&#39;Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/" title="About"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Ykzo&#39;Blog">Ykzo&#39;Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="About">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">汇编语言（第3版）</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>ykzo</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-10-01">2024-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1893 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#第-13-章-基础知识"><strong>第 1~3 章 基础知识</strong></a>
+      <ul>
+        <li><a href="#机器语言"><strong>机器语言</strong></a></li>
+        <li><a href="#汇编语言"><strong>汇编语言</strong></a></li>
+        <li><a href="#存储器"><strong>存储器</strong></a></li>
+        <li><a href="#cpu-对数据和指令的读写"><strong>CPU 对数据和指令的读写</strong></a></li>
+        <li><a href="#寄存器"><strong>寄存器</strong></a></li>
+        <li><a href="#汇编指令总结"><strong>汇编指令总结</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#第-46-章">第 4~6 章</a></li>
+    <li><a href="#第-78-章">第 7~8 章</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="第-13-章-基础知识"><strong>第 1~3 章 基础知识</strong></h2>
+<h3 id="机器语言"><strong>机器语言</strong></h3>
+<ul>
+<li>由 <strong>机器指令</strong>（一系列二进制数字）构成。</li>
+<li>直接被 CPU 解读执行，是计算机唯一能够理解的语言。</li>
+</ul>
+<h3 id="汇编语言"><strong>汇编语言</strong></h3>
+<ul>
+<li><strong>概念</strong>：
+<ul>
+<li>对应机器语言的 <strong>低级语言</strong>，是机器指令的 <strong>助记符形式</strong>，便于人类理解。</li>
+</ul>
+</li>
+<li><strong>组成</strong>：
+<ol>
+<li><strong>汇编指令</strong>（主体）：
+<ul>
+<li>是机器指令的可读表达形式。</li>
+<li>常用格式：<code>操作码 + 操作数</code>（如 <code>MOV AX, 10</code>）。</li>
+</ul>
+</li>
+<li><strong>伪指令</strong>：
+<ul>
+<li>辅助程序设计的非机器指令，如数据定义、流程控制等。</li>
+<li>示例：<code>DB</code>（定义字节数据）。</li>
+</ul>
+</li>
+<li><strong>符号</strong>：
+<ul>
+<li>标签、变量名等，提升代码可读性。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="存储器"><strong>存储器</strong></h3>
+<ul>
+<li><strong>功能</strong>：存储 <strong>指令和数据</strong>（形式上无区别，均为二进制数）。</li>
+<li><strong>特点</strong>：
+<ul>
+<li><strong>内存</strong>：位于 CPU 外部，通过总线与 CPU 通信。</li>
+<li><strong>存储单元</strong>：每个存储单元存储 <strong>1 个字节</strong>。</li>
+</ul>
+</li>
+<li><strong>分类</strong>：
+<ol>
+<li><strong>ROM</strong>（Read-Only Memory）：
+<ul>
+<li>只读存储器，断电后数据不丢失。</li>
+<li>常用于存储固件。</li>
+</ul>
+</li>
+<li><strong>RAM</strong>（Random Access Memory）：
+<ul>
+<li>随机存储器，断电后数据丢失。</li>
+<li>主要用作运行程序的临时存储空间。</li>
+<li>常见种类：
+<ul>
+<li>主板上的内存条。</li>
+<li><strong>接口卡上的 RAM</strong>：如显卡、网卡上的专用存储器。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/assembly-language-3rd-edition/images/2024-11-25-22-21-36.png"
+        data-srcset="/assembly-language-3rd-edition/images/2024-11-25-22-21-36.png, /assembly-language-3rd-edition/images/2024-11-25-22-21-36.png 1.5x, /assembly-language-3rd-edition/images/2024-11-25-22-21-36.png 2x"
+        data-sizes="auto"
+        alt="/assembly-language-3rd-edition/images/2024-11-25-22-21-36.png"
+        title="2024-11-25-22-21-36.png" width="1009" height="827" /></p>
+<h3 id="cpu-对数据和指令的读写"><strong>CPU 对数据和指令的读写</strong></h3>
+<p><strong>(1) CPU 对数据的读写</strong></p>
+<p><strong>三大总线：</strong></p>
+<ul>
+<li><strong>地址总线</strong>：定位内存地址。
+<ul>
+<li>N 根地址总线（宽度为 N），可寻址 $2^N$ 个内存单元。</li>
+</ul>
+</li>
+<li><strong>控制总线</strong>：控制操作类型，如读或写。</li>
+<li><strong>数据总线</strong>：负责数据的传输。
+<ul>
+<li>每 8 根数据总线可传输 1 个字节。</li>
+</ul>
+</li>
+</ul>
+<p><strong>(2) 8086 CPU 读取与执行指令的过程</strong></p>
+<p><strong>1. 地址计算：</strong></p>
+<ul>
+<li><strong><code>CS:IP</code></strong>：
+<ul>
+<li><strong>CS</strong>：段地址（指向当前代码段的基地址）。</li>
+<li><strong>IP</strong>：偏移地址（指向段内的具体指令位置）。</li>
+</ul>
+</li>
+<li>将 <strong>段地址和偏移地址</strong> 传递给 <strong>地址加法器</strong>。</li>
+<li>地址加法器计算物理地址：
+$$
+\text{物理地址} = \text{段地址} \times 16 + \text{偏移地址}
+$$</li>
+</ul>
+<p><strong>2. 内存访问</strong></p>
+<ul>
+<li><strong>地址总线</strong>：将计算出的物理地址通过地址总线发送给内存。</li>
+<li><strong>控制总线</strong>：发出“读”信号，指示内存读取操作。</li>
+<li><strong>数据总线</strong>：将内存中物理地址对应的指令数据传送到 CPU。</li>
+</ul>
+<p><strong>3. 指令缓存</strong></p>
+<ul>
+<li><strong>输入输出电路</strong>：接收从内存读取的指令数据，并传递到 <strong>指令缓冲器</strong>。</li>
+<li><strong>指令缓冲器</strong>：暂时存储读取到的指令，为执行阶段做好准备。</li>
+</ul>
+<p><strong>4. 指令执行</strong></p>
+<ul>
+<li><strong>执行控制器</strong>：从指令缓冲器中获取指令，解码并执行。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/assembly-language-3rd-edition/images/2024-11-25-15-02-17.png"
+        data-srcset="/assembly-language-3rd-edition/images/2024-11-25-15-02-17.png, /assembly-language-3rd-edition/images/2024-11-25-15-02-17.png 1.5x, /assembly-language-3rd-edition/images/2024-11-25-15-02-17.png 2x"
+        data-sizes="auto"
+        alt="/assembly-language-3rd-edition/images/2024-11-25-15-02-17.png"
+        title="2024-11-25-15-02-17.png" width="1010" height="433" /></p>
+<h3 id="寄存器"><strong>寄存器</strong></h3>
+<p><strong>(1) 通用寄存器</strong></p>
+<ul>
+<li><strong>AX</strong>：累加器，常用于算术运算和数据传输，某些指令默认操作对象。</li>
+<li><strong>BX</strong>：基址寄存器，可存放偏移地址，支持间接寻址（<code>DS:[BX]</code>）。</li>
+<li><strong>CX</strong>：计数寄存器，主要用于循环和字符串操作中的计数。</li>
+<li><strong>DX</strong>：数据寄存器，用于扩展乘法和除法操作。</li>
+</ul>
+<p><strong>(2) 段寄存器</strong></p>
+<ul>
+<li><strong><code>CS</code>（代码段寄存器）</strong>：配合 <strong>IP</strong>，指向当前代码段的基地址。</li>
+<li><strong><code>DS</code>（数据段寄存器）</strong>：指向数据段的基地址，配合偏移地址访问数据。</li>
+<li><strong><code>SS</code>（栈段寄存器）</strong>：配合 <strong>SP</strong>，指向当前栈顶位置。</li>
+<li><strong><code>ES</code>（附加段寄存器）</strong>：常用于字符串操作中的附加段，支持段间数据传输。</li>
+</ul>
+<p><strong>(3) 指针和索引寄存器</strong></p>
+<ul>
+<li><strong>SI</strong>：通常用于 BX 的额外寄存。</li>
+<li><strong>DI</strong>：通常用于 BX 的额外寄存。</li>
+<li><strong>BP（基指针寄存器）</strong>：与 <strong>BX</strong> 类似，但默认指向栈段（<code>SS:[BP]</code>）。</li>
+</ul>
+<h3 id="汇编指令总结"><strong>汇编指令总结</strong></h3>
+<ol>
+<li>
+<p><strong><code>mov</code></strong>：赋值操作</p>
+<ul>
+<li>功能：将数据从一个位置传输到另一个位置。</li>
+<li>格式：<code>mov 目标, 源</code>。
+<ul>
+<li><strong>目标</strong>可以是寄存器或内存地址。</li>
+<li><strong>源</strong>可以是寄存器、内存地址或立即数。</li>
+</ul>
+</li>
+<li>示例：<code>mov AX, 10</code>（将立即数 10 赋值到 AX 寄存器）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>add</code></strong>：加法操作</p>
+<ul>
+<li>功能：对两个操作数相加，将结果存入目标操作数。</li>
+<li>格式：<code>add 目标, 源</code>。</li>
+<li>示例：<code>add AX, 5</code>（将 AX 寄存器的值加 5，结果存入 AX）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>sub</code></strong>：减法操作</p>
+<ul>
+<li>功能：对目标操作数减去源操作数，将结果存入目标操作数。</li>
+<li>格式：<code>sub 目标, 源</code>。</li>
+<li>示例：<code>sub CX, 1</code>（将 CX 的值减 1，结果存入 CX）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>jmp</code></strong>：跳转操作</p>
+<ul>
+<li>功能：将程序流程跳转到指定的标号（标签）位置，改变 <code>CS:IP</code> 指针的值。</li>
+<li>示例：<code>jmp label</code>（跳转到标号 <code>label</code> 的位置继续执行）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>push</code></strong>：入栈操作</p>
+<ul>
+<li>功能：
+<ul>
+<li>(SP)=(SP)-2</li>
+<li>向 SS:SP 指向的字单元送入数据</li>
+</ul>
+</li>
+<li>格式：<code>push 寄存器/内存/立即数</code>。</li>
+<li>示例：<code>push CX</code>（将 CX 寄存器的值压入栈中）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>pop</code></strong>：出栈操作</p>
+<ul>
+<li>功能：
+<ul>
+<li>从 SS:SP 指向的字单元读取数据</li>
+<li>(SP)=(SP)+2</li>
+</ul>
+</li>
+<li>格式：<code>pop 寄存器</code>。</li>
+<li>示例：<code>pop CX</code>（将栈顶的值弹出，并存入 CX 寄存器）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>loop</code></strong>：循环</p>
+<ul>
+<li>功能：
+<ul>
+<li>(CX)=(CX)-1</li>
+<li>判断 CX 中的值，不为 0 跳转，为 0 向下执行</li>
+</ul>
+</li>
+<li>格式：<code>loop 标号</code>。</li>
+<li>示例：<code>loop s</code>（跳转到标号）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>and</code></strong>：逻辑与指令，按位进行与运算</p>
+<ul>
+<li>功能：置 0</li>
+<li>格式：<code>and xxxxxxxxb</code>。</li>
+<li>示例：<code>and 11011111b</code>（将第 5 位置 0，小写变大写）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>or</code></strong>：逻辑或指令，按位进行或运算</p>
+<ul>
+<li>功能：置 1</li>
+<li>格式：<code>or xxxxxxxxb</code>。</li>
+<li>示例：<code>or 00100000b</code>（将第 5 位置 1，大写变小写）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第-46-章">第 4~6 章</h2>
+<p><strong>汇编程序从写出到执行的过程</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">编程（Edit）-&gt; 源程序（xxx.asm）-&gt; 编译（masm） -&gt; 目标文件（xxx.obj）-&gt; 连接（link）-&gt; 可执行文件（程序、相关描述信息）（xxx.exe）-&gt; 加载（command）-&gt; 内存中的程序-&gt; 运行（CPU）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="第-78-章">第 7~8 章</h2>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-11-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/assembly-language-3rd-edition/" data-title="汇编语言（第3版）" data-hashtags="Programming-Languages,Assembly Language,Wang Shuang"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/assembly-language-3rd-edition/" data-hashtag="Programming-Languages"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/assembly-language-3rd-edition/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/assembly-language-3rd-edition/" data-title="汇编语言（第3版）"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/assembly-language-3rd-edition/" data-title="汇编语言（第3版）"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/programming-languages/">Programming-Languages</a>,&nbsp;<a href="/tags/assembly-language/">Assembly Language</a>,&nbsp;<a href="/tags/wang-shuang/">Wang Shuang</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/katex/" class="next" rel="next" title="KaTeX笔记">KaTeX笔记<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"FKTW1AAMOA","algoliaIndex":"ykzo","algoliaSearchKey":"48bbf64c00ada38e233bf8f046654419","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

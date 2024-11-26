@@ -3,15 +3,23 @@
         <title>Ykzo&#39;Blog</title>
         <link>http://localhost:1313/</link>
         <description>Ykzo的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 24 Nov 2024 14:53:33 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 25 Nov 2024 15:16:04 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Index</title>
-    <link>http://localhost:1313/assembly-language-3rd-edition-by-wang-shuang/</link>
-    <pubDate>Sun, 24 Nov 2024 14:32:18 &#43;0800</pubDate>
+    <title>KaTeX笔记</title>
+    <link>http://localhost:1313/katex/</link>
+    <pubDate>Mon, 25 Nov 2024 15:16:04 &#43;0800</pubDate>
     <author>ykzo</author>
-    <guid>http://localhost:1313/assembly-language-3rd-edition-by-wang-shuang/</guid>
-    <description><![CDATA[<p>测试</p>]]></description>
+    <guid>http://localhost:1313/katex/</guid>
+    <description><![CDATA[KaTeX笔记]]></description>
+</item>
+<item>
+    <title>汇编语言（第3版）</title>
+    <link>http://localhost:1313/assembly-language-3rd-edition/</link>
+    <pubDate>Tue, 01 Oct 2024 20:24:50 &#43;0800</pubDate>
+    <author>ykzo</author>
+    <guid>http://localhost:1313/assembly-language-3rd-edition/</guid>
+    <description><![CDATA[汇编语言（第3版）王爽著 笔记]]></description>
 </item>
 </channel>
 </rss>
