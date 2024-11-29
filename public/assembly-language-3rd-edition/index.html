@@ -34,7 +34,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/assembly-language-3rd-edition\/"
-        },"genre": "posts","keywords": "Programming-Languages, Assembly Language, Wang Shuang","wordcount":  1893 ,
+        },"genre": "posts","keywords": "Programming-Languages, Assembly Language, Wang Shuang","wordcount":  2111 ,
         "url": "http:\/\/localhost:1313\/assembly-language-3rd-edition\/","datePublished": "2024-10-01T20:24:50+08:00","dateModified": "2024-11-01T20:24:50+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">汇编语言（第3版）</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>ykzo</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-10-01">2024-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1893 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-10-01">2024-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2111 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -376,6 +376,33 @@ $$</li>
 <li>示例：<code>or 00100000b</code>（将第 5 位置 1，大写变小写）。</li>
 </ul>
 </li>
+<li>
+<p><strong><code>div</code></strong>：除法指令</p>
+<ul>
+<li>注意：
+<ul>
+<li>除数：8 位/16 位，存在一个 reg 或内存单元中</li>
+<li>被除数
+<ul>
+<li>除数为 8 位：被除数为 16 位</li>
+<li>除数为 16 位：</li>
+</ul>
+</li>
+<li>商、余数</li>
+</ul>
+</li>
+<li>格式：<code>or xxxxxxxxb</code>。</li>
+<li>示例：<code>or 00100000b</code>（将第 5 位置 1，大写变小写）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>dup</code></strong>：重复数据</p>
+<ul>
+<li>功能：定义多个数据</li>
+<li>格式：<code>db 3 dup (0)</code>。</li>
+<li>示例：<code>db 3 dup (0)</code>（定义 3 个字节，每个字节的值为 0）。</li>
+</ul>
+</li>
 </ol>
 <h2 id="第-46-章">第 4~6 章</h2>
 <p><strong>汇编程序从写出到执行的过程</strong>：</p>
@@ -388,7 +415,21 @@ $$</li>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="第-78-章">第 7~8 章</h2>
-</div><div class="post-footer" id="post-footer">
+<p>寻址方式综合应用：<code>[bx].10h[si]</code></p>
+<p>在没有寄存器参与的内存访问指令中，使用操作符 X ptr 指明内存单元长度：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">word</span> <span class="no">ptr</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">byte</span> <span class="no">ptr</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
