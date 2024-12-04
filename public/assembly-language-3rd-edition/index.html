@@ -34,7 +34,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/assembly-language-3rd-edition\/"
-        },"genre": "posts","keywords": "Programming-Languages, Assembly Language, Wang Shuang","wordcount":  2111 ,
+        },"genre": "posts","keywords": "Programming-Languages, Assembly Language, Wang Shuang","wordcount":  2464 ,
         "url": "http:\/\/localhost:1313\/assembly-language-3rd-edition\/","datePublished": "2024-10-01T20:24:50+08:00","dateModified": "2024-11-01T20:24:50+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">汇编语言（第3版）</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>ykzo</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-10-01">2024-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2111 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-10-01">2024-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2464 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -262,6 +262,18 @@ $$</li>
         data-sizes="auto"
         alt="/assembly-language-3rd-edition/images/2024-11-25-15-02-17.png"
         title="2024-11-25-15-02-17.png" width="1010" height="433" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/assembly-language-3rd-edition/images/2024-12-02-22-44-56.png"
+        data-srcset="/assembly-language-3rd-edition/images/2024-12-02-22-44-56.png, /assembly-language-3rd-edition/images/2024-12-02-22-44-56.png 1.5x, /assembly-language-3rd-edition/images/2024-12-02-22-44-56.png 2x"
+        data-sizes="auto"
+        alt="/assembly-language-3rd-edition/images/2024-12-02-22-44-56.png"
+        title="2024-12-02-22-44-56.png" width="592" height="81" /></p>
+<p>$$
+\text{先读取} \xrightarrow{} \text{再修改 IP } \xrightarrow{} \text{最后执行指令}
+$$</p>
+<p><strong>执行指令时，IP 已经指向下一条指令。</strong></p>
 <h3 id="寄存器"><strong>寄存器</strong></h3>
 <p><strong>(1) 通用寄存器</strong></p>
 <ul>
@@ -401,6 +413,30 @@ $$</li>
 <li>功能：定义多个数据</li>
 <li>格式：<code>db 3 dup (0)</code>。</li>
 <li>示例：<code>db 3 dup (0)</code>（定义 3 个字节，每个字节的值为 0）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>db</code></strong>：定义字节（define byte）</p>
+<ul>
+<li>功能：用于定义 <strong>1 个字节</strong>，可以定义多个字节。</li>
+<li>格式：<code>db &lt;value&gt; </code>或者<code> db &lt;count&gt; dup(&lt;value&gt;)</code>。</li>
+<li>示例：<code>db 3 dup (0)</code>（定义 3 个字节，每个字节的值为 <code>0</code>）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>dw</code></strong>：定义字（define word）</p>
+<ul>
+<li>功能：用于定义 <strong>1 个字（2 字节）</strong>，可以定义多个字。</li>
+<li>格式：<code>dw &lt;value&gt;</code> 或者 <code>dw &lt;count&gt; dup(&lt;value&gt;)</code>。</li>
+<li>示例：<code>dw 3 dup (0)</code>（定义 3 个字，每个字的值为 <code>0</code>）。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>dd</code></strong>：定义双字（define double word）</p>
+<ul>
+<li>功能：用于定义 <strong>1 个双字（4 字节）</strong>，可以定义多个双字。</li>
+<li>格式：<code>dd &lt;value&gt;</code> 或者 <code>dd &lt;count&gt; dup(&lt;value&gt;)</code>。</li>
+<li>示例：<code>dd 3 dup (0)</code>（定义 3 个双字，每个双字的值为 <code>0</code>）。</li>
 </ul>
 </li>
 </ol>

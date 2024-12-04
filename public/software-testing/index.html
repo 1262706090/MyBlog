@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Software Testing - Ykzo&#39;Blog</title><meta name="Description" content="Ykzo的博客"><meta property="og:url" content="http://localhost:1313/software-testing/">
+  <meta property="og:site_name" content="Ykzo&#39;Blog">
+  <meta property="og:title" content="Software Testing">
+  <meta property="og:description" content="Software Testing">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-11-30T17:11:32+08:00">
+    <meta property="article:modified_time" content="2024-11-30T17:11:32+08:00">
+    <meta property="article:tag" content="Software Testing">
+    <meta property="og:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+  <meta name="twitter:title" content="Software Testing">
+  <meta name="twitter:description" content="Software Testing">
+<meta name="application-name" content="Ykzo&#39;Blog">
+<meta name="apple-mobile-web-app-title" content="Ykzo&#39;Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/svgFavicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/software-testing/" /><link rel="prev" href="http://localhost:1313/katex/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Software Testing",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/software-testing\/"
+        },"genre": "posts","keywords": "Software Testing","wordcount":  932 ,
+        "url": "http:\/\/localhost:1313\/software-testing\/","datePublished": "2024-11-30T17:11:32+08:00","dateModified": "2024-11-30T17:11:32+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ykzo"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="normal" data-header-mobile="normal"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Ykzo&#39;Blog">Ykzo&#39;Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/" title="About"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Ykzo&#39;Blog">Ykzo&#39;Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="About">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Software Testing</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>ykzo</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-11-30">2024-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 932 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#第-一-章-软件测试概述">第 一 章 软件测试概述</a>
+      <ul>
+        <li><a href="#11-软件质量的基本概念">1.1 软件质量的基本概念</a>
+          <ul>
+            <li><a href="#111-软件危机表现">1.1.1 软件危机表现</a></li>
+          </ul>
+        </li>
+        <li><a href="#12-软件质量">1.2 软件质量</a>
+          <ul>
+            <li><a href="#123-软件错误">1.2.3 软件错误</a></li>
+          </ul>
+        </li>
+        <li><a href="#13-软件测试基本知识">1.3 软件测试基本知识</a>
+          <ul>
+            <li><a href="#131-软件测试定义">1.3.1 软件测试定义</a></li>
+            <li><a href="#133-软件测试的辩证观点">1.3.3 软件测试的辩证观点</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#第-二-章-软件测试策略">第 二 章 软件测试策略</a>
+      <ul>
+        <li><a href="#21-软件测试的生命周期">2.1 软件测试的生命周期</a></li>
+      </ul>
+    </li>
+    <li><a href="#第-三-章-黑盒测试">第 三 章 黑盒测试</a>
+      <ul>
+        <li><a href="#32-等价类划分测试方法">3.2 等价类划分测试方法</a>
+          <ul>
+            <li><a href="#324-等价类划分原则">3.2.4 等价类划分原则</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#第-四-章-白盒测试">第 四 章 白盒测试</a>
+      <ul>
+        <li><a href="#41-静态白盒测试和动态白盒测试">4.1 静态白盒测试和动态白盒测试</a>
+          <ul>
+            <li><a href="#411-静态白盒测试">4.1.1 静态白盒测试</a></li>
+            <li><a href="#412-动态白盒测试">4.1.2 动态白盒测试</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#第-五-章-单元测试">第 五 章 单元测试</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#521-角色和职责">5.2.1 角色和职责</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#第-六-章-集成测试">第 六 章 集成测试</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#631-一次性集成测试">6.3.1 一次性集成测试</a></li>
+            <li><a href="#632-自顶向下集成测试">6.3.2 自顶向下集成测试</a></li>
+            <li><a href="#633-自底向上集成测试">6.3.3 自底向上集成测试</a></li>
+            <li><a href="#634-协作集成集成测试">6.3.4 协作集成集成测试</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#第-七-章-系统测试">第 七 章 系统测试</a>
+      <ul>
+        <li><a href="#73-性能测试">7.3 性能测试</a>
+          <ul>
+            <li><a href="#731-负载压力测试">7.3.1 负载压力测试</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#第-八-章-性能测试">第 八 章 性能测试</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="第-一-章-软件测试概述">第 一 章 软件测试概述</h2>
+<h3 id="11-软件质量的基本概念">1.1 软件质量的基本概念</h3>
+<h4 id="111-软件危机表现">1.1.1 软件危机表现</h4>
+<ul>
+<li>项目无法按期完成</li>
+<li>费用超出预算</li>
+<li>质量难以控制</li>
+<li>运行难以维护</li>
+</ul>
+<h3 id="12-软件质量">1.2 软件质量</h3>
+<h4 id="123-软件错误">1.2.3 软件错误</h4>
+<p><strong>软件错误/软件缺陷（Bug）</strong>：计算机程序系统或程序中存在的任何一种破坏正常运行能力的问题、错误或隐藏的功能缺陷、瑕疵。</p>
+<p><strong>4 种级别</strong>：</p>
+<ol>
+<li><strong>致命的</strong>：系统整体影响、数据丢失</li>
+<li><strong>严重的</strong>：主要功能缺陷</li>
+<li><strong>一般的</strong>：次要功能缺陷</li>
+<li><strong>微小的</strong>：基本不影响-外观</li>
+</ol>
+<h3 id="13-软件测试基本知识">1.3 软件测试基本知识</h3>
+<h4 id="131-软件测试定义">1.3.1 软件测试定义</h4>
+<ul>
+<li><strong>狭义定义</strong>：软件测试是为了发现错误而<strong>执行程序</strong>的过程。</li>
+<li><strong>广义定义</strong>：
+<ol>
+<li><strong>确认</strong>：文档</li>
+<li><strong>验证</strong>：功能</li>
+<li><strong>测试</strong>：程序</li>
+</ol>
+</li>
+</ul>
+<h4 id="133-软件测试的辩证观点">1.3.3 软件测试的辩证观点</h4>
+<ol>
+<li><strong>正向思维</strong>：“工作的”-正确性。</li>
+<li><strong>反向思维</strong>：“不工作的”-不正确性。</li>
+</ol>
+<h2 id="第-二-章-软件测试策略">第 二 章 软件测试策略</h2>
+<h3 id="21-软件测试的生命周期">2.1 软件测试的生命周期</h3>
+<p><strong>测试顺序</strong>：性能测试；可靠性测试；安全性测试。</p>
+<p>在软件测试中，将测试的<strong>输入数据</strong>定义和<strong>预期结果</strong>的描述记为测试用例。</p>
+<h2 id="第-三-章-黑盒测试">第 三 章 黑盒测试</h2>
+<ul>
+<li><strong>特征</strong>：把程序或测试看成一个<strong>黑盒子</strong>，验证<strong>输入与输出之间的关系是否正确</strong>；<strong>不考虑程序内部的结构和特性</strong>。</li>
+<li><strong>目标</strong>：测试程序的功能或接口，检查是否符合需求规格说明书。</li>
+</ul>
+<h3 id="32-等价类划分测试方法">3.2 等价类划分测试方法</h3>
+<h4 id="324-等价类划分原则">3.2.4 等价类划分原则</h4>
+<ol>
+<li><strong>取值范围</strong>：一个有效等价类，两个无效等价类</li>
+<li><strong>集合或“必须如何”的条件</strong>：一个有效等价类，一个无效等价类</li>
+<li><strong>布尔量</strong>：一个有效等价类，一个无效等价类</li>
+<li><strong>一组值（n 个）</strong>：n 个有效等价类，一个无效等价类</li>
+</ol>
+<h2 id="第-四-章-白盒测试">第 四 章 白盒测试</h2>
+<h3 id="41-静态白盒测试和动态白盒测试">4.1 静态白盒测试和动态白盒测试</h3>
+<h4 id="411-静态白盒测试">4.1.1 静态白盒测试</h4>
+<p>不运行软件：</p>
+<ol>
+<li>走查、复审、评审程序源代码</li>
+<li>检查数据组织、环境设置和软件配置项</li>
+</ol>
+<h4 id="412-动态白盒测试">4.1.2 动态白盒测试</h4>
+<ol>
+<li>分析程序代码</li>
+<li>设计测试用例</li>
+<li>通过<strong>驱动程序</strong>和<strong>桩程序</strong>来驱动、调用<strong>被测程序</strong>的运行</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/software-testing/images/2024-12-04-17-22-33.png"
+        data-srcset="/software-testing/images/2024-12-04-17-22-33.png, /software-testing/images/2024-12-04-17-22-33.png 1.5x, /software-testing/images/2024-12-04-17-22-33.png 2x"
+        data-sizes="auto"
+        alt="/software-testing/images/2024-12-04-17-22-33.png"
+        title="2024-12-04-17-22-33.png" width="644" height="318" /></p>
+<h2 id="第-五-章-单元测试">第 五 章 单元测试</h2>
+<h4 id="521-角色和职责">5.2.1 角色和职责</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/software-testing/images/2024-12-04-17-26-53.png"
+        data-srcset="/software-testing/images/2024-12-04-17-26-53.png, /software-testing/images/2024-12-04-17-26-53.png 1.5x, /software-testing/images/2024-12-04-17-26-53.png 2x"
+        data-sizes="auto"
+        alt="/software-testing/images/2024-12-04-17-26-53.png"
+        title="2024-12-04-17-26-53.png" width="623" height="282" /></p>
+<h2 id="第-六-章-集成测试">第 六 章 集成测试</h2>
+<h4 id="631-一次性集成测试">6.3.1 一次性集成测试</h4>
+<ol>
+<li>适用场景
+<ul>
+<li>被测系统曾经稳定运行</li>
+<li>规模不大</li>
+<li>构件之间紧密联系</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>优点：用例少，测试快</li>
+<li>缺点：错误定位难，调试难</li>
+</ul>
+</li>
+</ol>
+<h4 id="632-自顶向下集成测试">6.3.2 自顶向下集成测试</h4>
+<ol>
+<li>适用场景
+<ul>
+<li>自顶向下增量式开发</li>
+<li>并行式开发</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>不需要开发驱动模块</li>
+<li>桩程序开发工作量比较大</li>
+<li>对底层模块的测试不够充分</li>
+</ul>
+</li>
+</ol>
+<h4 id="633-自底向上集成测试">6.3.3 自底向上集成测试</h4>
+<p>对底层软件充分测试</p>
+<h4 id="634-协作集成集成测试">6.3.4 协作集成集成测试</h4>
+<p>尽快测试某些子功能：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/software-testing/images/2024-12-04-17-33-58.png"
+        data-srcset="/software-testing/images/2024-12-04-17-33-58.png, /software-testing/images/2024-12-04-17-33-58.png 1.5x, /software-testing/images/2024-12-04-17-33-58.png 2x"
+        data-sizes="auto"
+        alt="/software-testing/images/2024-12-04-17-33-58.png"
+        title="2024-12-04-17-33-58.png" width="550" height="315" /></p>
+<h2 id="第-七-章-系统测试">第 七 章 系统测试</h2>
+<ol>
+<li>整体软件</li>
+<li>除软件本身外，还包含需求分析、概要设计、详细设计、用户使用说明等技术文档</li>
+</ol>
+<h3 id="73-性能测试">7.3 性能测试</h3>
+<h4 id="731-负载压力测试">7.3.1 负载压力测试</h4>
+<p><strong>负载测试</strong>：“额定”负载条件（性能极值点之前）
+<strong>压力测试</strong>：“饱和”负载条件（性能极值点之后）</p>
+<h2 id="第-八-章-性能测试">第 八 章 性能测试</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/software-testing/images/2024-12-04-17-43-07.png"
+        data-srcset="/software-testing/images/2024-12-04-17-43-07.png, /software-testing/images/2024-12-04-17-43-07.png 1.5x, /software-testing/images/2024-12-04-17-43-07.png 2x"
+        data-sizes="auto"
+        alt="/software-testing/images/2024-12-04-17-43-07.png"
+        title="2024-12-04-17-43-07.png" width="637" height="391" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/software-testing/images/2024-12-04-17-43-23.png"
+        data-srcset="/software-testing/images/2024-12-04-17-43-23.png, /software-testing/images/2024-12-04-17-43-23.png 1.5x, /software-testing/images/2024-12-04-17-43-23.png 2x"
+        data-sizes="auto"
+        alt="/software-testing/images/2024-12-04-17-43-23.png"
+        title="2024-12-04-17-43-23.png" width="639" height="381" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-11-30</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/software-testing/" data-title="Software Testing" data-hashtags="Software Testing"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/software-testing/" data-hashtag="Software Testing"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/software-testing/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/software-testing/" data-title="Software Testing"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/software-testing/" data-title="Software Testing"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/software-testing/">Software Testing</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/katex/" class="prev" rel="prev" title="KaTeX笔记"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>KaTeX笔记</a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"FKTW1AAMOA","algoliaIndex":"ykzo","algoliaSearchKey":"48bbf64c00ada38e233bf8f046654419","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
